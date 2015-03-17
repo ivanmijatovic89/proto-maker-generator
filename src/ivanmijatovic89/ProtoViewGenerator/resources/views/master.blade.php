@@ -15,7 +15,7 @@
         	<div class="row">
         		<div class="col-md-12">
                     <h1>Proto Maker</h1>
-                    @include('proto.notifications')
+                    @include('protomaker::notifications')
         		    @yield('content')
         		</div>
         	</div>

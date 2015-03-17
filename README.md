@@ -7,7 +7,7 @@
     "repositories": [
       {
         "type": "vcs",
-        "url": "https://github.com/ivanmijatovic89/proto-maker-generator"
+        "url": "https://github.com/ivanmijatovic89/proto-view-generator"
       }
     ],
 

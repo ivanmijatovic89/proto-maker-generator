@@ -26,5 +26,5 @@
             "ivanmijatovic89\\ProtoViewGenerator": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

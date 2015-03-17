@@ -1,5 +1,5 @@
-index.blade.php
+@extends('protomaker::master')
 
-Ovo je izmenjen view
-
-VOO JE INDEX VIEW
+@section('content')
+    this is the best
+@stop

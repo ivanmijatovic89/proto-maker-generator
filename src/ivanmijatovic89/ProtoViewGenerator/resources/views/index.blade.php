@@ -172,6 +172,8 @@ function makeRelation(ovo)
 
     function makeJson()
     {
+
+        // test
         //   '{"name":{"type":"text"},"description":{"type":"text"}}'
         $.obj = {};
 //        $.obj.name = $('#modul_name').val();

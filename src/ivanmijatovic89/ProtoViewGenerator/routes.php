@@ -7,7 +7,8 @@
 
  // Route::get('protomaker', '\ivanmijatovic89\ProtoViewGenerator\ProtoMakerController@index');
 
-Route::group(['namespace' => '\ivanmijatovic89\ProtoViewGenerator'], function(){
+Route::group(['namespace' => '\ivanmijatovic89\ProtoViewGenerator\Controller'], function(){
+
  	 Route::get('protomaker', 'ProtoMakerController@index');
 });
 

@@ -10,8 +10,8 @@
 		@yield('header')
 	</head>
 	<body>
-
-        <div class="container">
+        @include('protomaker::navigation')
+        <div class="container" style="margin-top:50px">
         	<div class="row">
         		<div class="col-md-12">
                     <h1>Proto Maker</h1>

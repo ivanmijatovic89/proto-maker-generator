@@ -13,6 +13,7 @@
 
   add to `app/config/app.php`
 
-
+```php
    'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',
    'dam1r89\ProtoGenerator\ProtoGeneratorServiceProvider',
+```

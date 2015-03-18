@@ -14,4 +14,5 @@
 add to `app/config/app.php`
 
    'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',
+   
     'dam1r89\ProtoGenerator\ProtoGeneratorServiceProvider'

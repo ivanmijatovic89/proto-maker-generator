@@ -11,7 +11,7 @@
       }
     ],
 
-add to `app/config/app.php`
+  add to `app/config/app.php`
 
 
    'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',

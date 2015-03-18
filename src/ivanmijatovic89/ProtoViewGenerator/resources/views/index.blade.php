@@ -132,10 +132,78 @@
         <br>
         <button class="btn btn-success btn-lg" onclick="addNewField()">Add new Field</button>
     </div>
+
+
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="btn btn-default" onclick="toggleDiv('myContent')"> Additional options</button>
+            <div id="myContent" style=" padding: 20px;display:none;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" style="width:300px">-t template folder</button>
+                      </span>
+                            <input type="text" class="form-control" placeholder="" >
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <br>
+                        <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"  style="width:300px">-o output folder</button>
+                      </span>
+                            <input type="text" class="form-control" placeholder="" >
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <br>
+                        <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"  style="width:300px">-r Replace files withouth asking</button>
+                      </span>
+                            <select class="form-control">
+                                <option value="no"> No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <h4>Database Helper</h4>
+
+                            <select class="form-control">
+
+                                @foreach($tables as  $table_name =>$table)
+                                    <optgroup label="{{$table_name}}">
+                                        @foreach($table as $field)
+                                            <option>{{$field}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endforeach
+
+                            </select>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('footer')
 <script>
+    // toggle div addvance options
+    function toggleDiv(divId) {
+        $("#"+divId).toggle();
+    }
+
+
+
+
     $.br=1;
 function addNewField()
 {

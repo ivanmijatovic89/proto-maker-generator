@@ -17,3 +17,8 @@
    'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',
    'dam1r89\ProtoGenerator\ProtoGeneratorServiceProvider',
 ```
+
+
+  Go to `domain.com/protomaker`
+
+  enjoy

@@ -15,7 +15,7 @@
   	"require-dev": {
 
           "ivanmijatovic89/proto-view-generator":  "dev-master",
-          "dam1r89/proto-generator": "2.0.*"
+          "dam1r89/proto-generator": "dev-master"
   	},
 
 

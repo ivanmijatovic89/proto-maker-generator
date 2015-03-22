@@ -37,6 +37,44 @@ add to `app/config/app.php`
     ]
 ```
 
-  Go to `domain.com/protomaker`
+##  Go to `domain.com/protomaker`
 
-  enjoy
+### For Modules install
+        https://github.com/caffeinated/modules
+```
+"require": {
+    "caffeinated/modules": "~1.0"
+   }
+```
+Service Provider
+```
+'providers' => [
+        'Caffeinated\Modules\ModulesServiceProvider'
+        ]
+```
+Facade
+```
+'aliases' =>
+    [
+        'Module' => 'Caffeinated\Modules\Facades\Module'
+    ]
+```
+
+Than to make module type:
+```
+php artisan module:make vendor
+```
+
+than create crud
+```
+php artisan proto vendor --fields='{"name":{"type":"text"},"user_id":{"type":"integer","relation":{"class":"\\App\\User","field":"email","name":"user","type":"hasOne"}}}' --output="App/Modules/Vendor"  --output="App/Modules/Vendor" --template="modul" -r
+```
+
+than migrate vendor module
+```
+php artisan module:migrate vendor
+```
+
+go to domain/vendors
+
+

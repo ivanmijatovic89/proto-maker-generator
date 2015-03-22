@@ -13,19 +13,29 @@
       ],
 
   	"require-dev": {
-  		"phpunit/phpunit": "~4.0",
-  		"phpspec/phpspec": "~2.1",
+
           "ivanmijatovic89/proto-view-generator":  "dev-master",
           "dam1r89/proto-generator": "2.0.*"
   	},
 
-  add to `app/config/app.php`
 
-```php
-   'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',
-   'dam1r89\ProtoGenerator\ProtoGeneratorServiceProvider',
+
+add to `app/config/app.php`
 ```
+	'providers' => [
+	    ...
+	    'ivanmijatovic89\ProtoViewGenerator\ProtoViewGeneratorServiceProvider',
+        'dam1r89\ProtoGenerator\ProtoGeneratorServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
+    ]
 
+    'aliases' =>
+    [
+        ...
+        'Form' => 'Illuminate\Html\FormFacade',
+        'Html' => 'Illuminate\Html\HtmlFacade',
+    ]
+```
 
   Go to `domain.com/protomaker`
 

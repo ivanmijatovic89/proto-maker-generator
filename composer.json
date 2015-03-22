@@ -7,26 +7,18 @@
             "email": "ivanmijatovic89@gmail.com"
         }
     ],
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/ivanmijatovic89/laravel-proto-generator"
-      }
-    ],
 
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*",
-        "dam1r89/proto-generator": "dev-master"
+        "illuminate/support": "5.0.*"
+
     },
-  "require-dev": {
-    "dam1r89/proto-generator": "dev-master"
-  },
+
 
     "autoload": {
         "psr-0": {
             "ivanmijatovic89\\ProtoViewGenerator": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }

@@ -39,10 +39,12 @@ class ProtoMakerController extends Controller {
                 $tables[] = $t;
             }
         }
-        foreach($tables as $table){
-            $fields =\Illuminate\Support\Facades\Schema::getColumnListing($table);
-            foreach($fields as $field){
-                $data[$table][]=$field;
+        if(isset($tables)) {
+            foreach ($tables as $table) {
+                $fields = \Illuminate\Support\Facades\Schema::getColumnListing($table);
+                foreach ($fields as $field) {
+                    $data[$table][] = $field;
+                }
             }
         }
         return $data;

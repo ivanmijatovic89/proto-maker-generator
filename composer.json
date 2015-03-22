@@ -20,8 +20,8 @@
         "illuminate/support": "5.0.*"
 
     },
-  "require": {
-    "dam1r89/proto-generator": "2.0.*"
+  "require-dev": {
+    "ivanmijatovic89/laravel-proto-generator": "2.0.*"
 
   },
 

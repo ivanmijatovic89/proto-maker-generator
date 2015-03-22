@@ -17,7 +17,7 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*",
-        "dam1r89/proto-generator": "2.0.*"
+        "ivanmijatovic89/proto-generator": "2.0.*"
     },
 
 

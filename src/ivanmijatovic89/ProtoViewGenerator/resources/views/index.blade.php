@@ -134,7 +134,7 @@
     </div>
 
 
-    
+
     <div class="row">
         <div class="col-lg-12">
             <button class="btn btn-default" onclick="toggleDiv('myContent')"> Additional options</button>

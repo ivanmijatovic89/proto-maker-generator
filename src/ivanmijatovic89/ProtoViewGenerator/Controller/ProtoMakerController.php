@@ -46,8 +46,11 @@ class ProtoMakerController extends Controller {
                     $data[$table][] = $field;
                 }
             }
+            return $data;
+        }else{
+            return [];
         }
-        return $data;
+
     }
 
 }

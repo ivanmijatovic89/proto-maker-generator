@@ -145,7 +145,10 @@
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button" style="width:300px">-t template folder</button>
                       </span>
-                            <input type="text" class="form-control" placeholder="" >
+                            <select class="form-control" id="template">
+                                <option value="standard"> Standard</option>
+                                <option value="modul">    Module</option>
+                            </select>
                         </div>
                     </div>
 
@@ -155,7 +158,7 @@
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button"  style="width:300px">-o output folder</button>
                       </span>
-                            <input type="text" class="form-control" placeholder="" >
+                            <input type="text" class="form-control" placeholder="" id="output" >
                         </div>
                     </div>
 
@@ -165,7 +168,7 @@
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button"  style="width:300px">-r Replace files withouth asking</button>
                       </span>
-                            <select class="form-control">
+                            <select class="form-control" id="replace">
                                 <option value="no"> No</option>
                                 <option value="yes">Yes</option>
                             </select>
@@ -291,7 +294,30 @@ function makeRelation(ovo)
         $.obj_string = JSON.stringify($.obj).replace("[", "'").replace("]", "'");
         $.module_name = $('#modul_name').val();
 
-        $.final = 'php artisan proto '+ $.module_name +" --fields=" + $.obj_string;
+
+        // Template --template
+        if($('#template').val() == 'modul'){
+            $.template = ' --template="modul" ';
+        }else{
+            $.template = ' ';
+        }
+
+        // Replace  -r
+        if($('#replace').val() == 'yes'){
+            $.replace = ' -r ';
+        }else{
+            $.replace = ' ';
+        }
+
+        // Output --output
+        if($('#output').val()){
+            $.output = '--output="' + $('#output').val()+ '"';
+        }else{
+            $.output = ' ';
+        }
+
+
+        $.final = 'php artisan proto '+ $.module_name +" --fields=" + $.obj_string + $.template + $.output +$.replace;
 
         console.log($.final);
         $('.progress-bar').text('100%');

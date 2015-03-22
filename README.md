@@ -75,6 +75,14 @@ than migrate vendor module
 php artisan module:migrate vendor
 ```
 
+just for example add POST
+
+```
+php artisan module:make post
+php artisan proto post --fields='{"name":{"type":"text","validation":"required|max:25|min:8"}, "body":{"type":"text"},"user_id":{"type":"integer","relation":{"class":"\\App\\User","field":"email","name":"user","type":"hasOne"}},"vendors":{"type":"integer","relation":{"class":"\\App\\Modules\\Vendor\\Models\\Vendor","field":"name","name":"vendors","type":"belongsToMany"}}}' --output="App/Modules/Post" --template="modul" -r
+php artisan module:migrate post
+```
+
 go to domain/vendors
 
 

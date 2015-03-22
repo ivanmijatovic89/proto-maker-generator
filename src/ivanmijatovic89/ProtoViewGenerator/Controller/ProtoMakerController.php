@@ -32,13 +32,15 @@ class ProtoMakerController extends Controller {
     public function getTables()
     {
         $allTable = DB::select('SHOW TABLES');
+
+        $name = 'Tables_in_'.DB::connection()->getDatabaseName();
         foreach($allTable as $table)
         {
-            $t = $table->Tables_in_jsonmodul;
-            if($t != 'migrations'){
-                $tables[] = $t;
+            if ($table->$name != 'migrations') {
+                $tables[] = $table->$name;
             }
         }
+
         if(isset($tables)) {
             foreach ($tables as $table) {
                 $fields = \Illuminate\Support\Facades\Schema::getColumnListing($table);

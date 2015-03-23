@@ -39,7 +39,7 @@ class ProtoViewGeneratorServiceProvider extends ServiceProvider {
 	    ]);
 
 	    // ROUTES
-	    include __DIR__.'/routes.php';
+	    include __DIR__ . '/routes.php';
 
 	}
 

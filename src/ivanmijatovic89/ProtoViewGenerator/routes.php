@@ -10,6 +10,8 @@
 Route::group(['namespace' => '\ivanmijatovic89\ProtoViewGenerator\Controller'], function(){
 
          Route::get('protomaker', 'ProtoMakerController@index');
+
+         Route::post('protoMakeCrud', ['as'=>'protoMakeCrud','uses'=> 'ProtoMakerController@protoMakeCrud']);
     // ovo je test
 });
 

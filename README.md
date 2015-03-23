@@ -5,7 +5,7 @@
         {
           "type": "vcs",
           "url": "https://github.com/ivanmijatovic89/proto-maker-generator"
-        },
+        }
       ],
 
   	"require-dev": {

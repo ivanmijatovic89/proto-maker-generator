@@ -29,7 +29,7 @@ add to `app/config/app.php`
     [
         ...
         'Form' => 'Illuminate\Html\FormFacade',
-        'Html' => 'Illuminate\Html\HtmlFacade',
+        'HTML' => 'Illuminate\Html\HtmlFacade',
     ]
 ```
 

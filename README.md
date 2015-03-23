@@ -36,7 +36,8 @@ add to `app/config/app.php`
 ##  Go to `domain.com/protomaker`
 
 ### For Modules install
-        https://github.com/caffeinated/modules
+[https://github.com/caffeinated/modules](https://github.com/caffeinated/modules)
+
 ```
 "require": {
     "caffeinated/modules": "~1.0"
@@ -55,6 +56,38 @@ Facade
         'Module' => 'Caffeinated\Modules\Facades\Module'
     ]
 ```
+publish config file - look at docs
+
+### Translations
+
+Instal Laravel-Translatable
+
+[https://github.com/dimsav/laravel-translatable](https://github.com/dimsav/laravel-translatable)
+
+#### Step 1: Install translation package
+
+Add the package in your composer.json by executing the command.
+
+```bash
+composer require dimsav/laravel-translatable
+```
+
+Next, add the service provider to `app/config/app.php`
+
+```
+'Dimsav\Translatable\TranslatableServiceProvider',
+```
+
+#### Step 2: Publish Translation Config
+
+```bash
+php artisan vendor:publish
+//or
+php artisan vendor:publish --provider="Dimsav\Translatable\TranslatableServiceProvider"
+```
+
+
+### Examples with command line
 
 Than to make module type:
 ```
@@ -63,7 +96,7 @@ php artisan module:make vendor
 
 than create crud
 ```
-php artisan proto vendor --fields='{"name":{"type":"text"},"user_id":{"type":"integer","relation":{"class":"\\App\\User","field":"email","name":"user","type":"hasOne"}}}' --output="App/Modules/Vendor"  --output="App/Modules/Vendor" --template="modul" -r
+php artisan proto vendor --fields='{"name":{"type":"text"},"user_id":{"type":"integer","relation":{"class":"\\App\\User","field":"email","name":"user","type":"hasOne"}}}' --data='{"namespace":"App\\Modules\\Vendor\\"}'  --output="App/Modules/Vendor"  --output="App/Modules/Vendor" --template="modul" -r
 ```
 
 than migrate vendor module

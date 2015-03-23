@@ -6,10 +6,6 @@
           "type": "vcs",
           "url": "https://github.com/ivanmijatovic89/proto-maker-generator"
         },
-        {
-          "type": "vcs",
-          "url": "https://github.com/ivanmijatovic89/laravel-proto-generator"
-        }
       ],
 
   	"require-dev": {

@@ -35,7 +35,7 @@ class ProtoMakerController extends Controller {
 //        die();
         $tables = $this->getTables();
 //		return view('protomaker::tests',['tables'=>$tables]);
-		return view('protomaker::index',['tables'=>$tables] );
+		return view('protomaker::index2',['tables'=>$tables] );
 	}
 
     public function protoMakeCrud()

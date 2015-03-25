@@ -27,7 +27,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Name of Modul</button>
                   </span>
-                <input type="text" class="form-control" placeholder="How do you wanna call your Modul" id="modul_name">
+                <input type="text" class="form-control" placeholder="How do you wanna call your Model/Modul (singular lowercase)" id="modul_name">
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-3" style="text-align:center">
@@ -115,7 +115,7 @@
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button">Model Namespace</button>
                       </span>
-                        <input type="text" class="form-control relation_model_namespace" placeholder="\App\User" name="relation_class">
+                        <input type="text" class="form-control relation_model_namespace" placeholder="\App\Models\User" name="relation_class">
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
 
@@ -306,7 +306,7 @@
                         var name             = $(div).find('.field_name').val();
                         var type             = $(div).find('.field_type').val();
                         var validation       = $(div).find('.field_validation').val();
-                        var translation      = $(div).find('.field_translation').val();
+                        var translation      = $(div).find('.field_translation').is(':checked');
 
                         if(validation=='yes')
                         {
@@ -333,6 +333,7 @@
                         array.type       = type;
                         array.validation = validation;
                         array.relation   = relation;
+                        console.log(translation)
                         if(translation){
                             array.translation   = true;
                         }
@@ -341,14 +342,13 @@
                         var obj={};
                         $.obj[name] = array;
 
-//            $.obj.push(obj) ;
 
                         delete(relation)
 
 
 
                     });
-                    $.obj_string = JSON.stringify($.obj).replace("[", "'").replace("]", "'");
+                    $.obj_string = "'" + JSON.stringify($.obj) + "'"; //.replace("[", "'").replace("]", "'");
                     $.module_name = $('#modul_name').val();
 
 

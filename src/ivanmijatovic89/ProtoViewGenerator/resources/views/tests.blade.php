@@ -1,6 +1,8 @@
 @extends('protomaker::master')
 
 @section('content')
+    <h1>Proto Maker</h1>
+
     <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
             0%
@@ -390,6 +392,8 @@
 
                 function makeCrud()
                 {
+                    $('.alert-success').fadeOut( "slow" )
+                    $('.alert-danger' ).fadeOut( "slow" )
                     makeJson();
                     {{--{{URL::route('protoMakeCrud')}}--}}
                     $.post( "protoMakeCrud" ,{
@@ -403,11 +407,14 @@
                         function( data ) {
                             if(data.status == 200){
                                 $( ".alert-danger").hide();
-                                $( ".alert-success").show().html( data.msg );
+                                $( ".alert-success").fadeIn('slow').html( data.msg );
+
 
                             }else if(data.status == 400){
-                                $( ".alert-danger").show().html( data.msg );
                                 $( ".alert-success").hide();
+                                $( ".alert-danger").fadeIn('slow').html( data.msg );
+
+
                             }
 
                         }

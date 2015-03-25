@@ -11,7 +11,8 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Documentation</a></li>
+                <li class="active"><a href="{{URL::route('protomaker.index')}}">Make</a></li>
+                <li class="active"><a href="{{URL::route('protomaker.docscom')}}">Documentation</a></li>
                 {{--<li><a href="#about">About</a></li>--}}
                 {{--<li><a href="#contact">Contact</a></li>--}}
                 {{--<li class="dropdown">--}}

@@ -34,8 +34,8 @@ class ProtoMakerController extends Controller {
 //        print_r($a);
 //        die();
         $tables = $this->getTables();
-		return view('protomaker::tests',['tables'=>$tables]);
-//		return view('protomaker::index',['tables'=>$tables] );
+//		return view('protomaker::tests',['tables'=>$tables]);
+		return view('protomaker::index',['tables'=>$tables] );
 	}
 
     public function protoMakeCrud()
@@ -103,6 +103,11 @@ class ProtoMakerController extends Controller {
             return \Response::json(['status'=>400,'msg'=>'There was an Error' ]);
         }
         return;
+    }
+
+    public function docs()
+    {
+        return view('protomaker::docs');
     }
 
 

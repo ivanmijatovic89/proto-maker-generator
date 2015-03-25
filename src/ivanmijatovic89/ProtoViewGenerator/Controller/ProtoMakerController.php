@@ -60,25 +60,41 @@ class ProtoMakerController extends Controller {
             $context['namespace'] = 'App\\';
         }
 
+
+
+        // Init Message
         $msg = '';
+
+        // create Crud
+        $p = Proto::create( $this->templatesPath . $template , base_path().'/'.$output , $context);
+
+        $msg .= "Model/Modul name: <b>".$model."</b><br>";
+        $msg .= "Namespace: <b>".$context['namespace']."</b><br>";
+        $msg .= "Template: <b>$template</b><br>";
+        $msg .= "Output folder: <b>$output</b><br>";
+        $msg .= '<b>Fields</b> : ';
+        foreach($fields as $field =>$val){
+            $msg .= $field .' ,';
+        }
+        $msg .= '<hr>';
+
+        // all Generated Files
+        foreach ($p->getFiles() as $file) {
+                $msg .= substr($file->dest, strlen(base_path()) + 1) . "<br>";
+        }
+
         if($template == 'modul'){
             // Module Template
-            $msg .= 'Generating routes.php inside module '.ucfirst($model).' folder. '.$output. "/Http/routes.php <br>";
+            $msg .= '<br>Generating routes.php inside module '.ucfirst($model).' folder. '.$output. "/Http/routes.php <br>";
             $msg .= 'to migrate type command : php artisan module:migrate '.$model;
 
         }elseif($template == 'standard' OR $template = 'translate'){
             // Standard template
-            $msg .= "Add to the routes:" . "<br>";
+            $msg .= "<br><b>Add to the routes:</b>" . "<br>";
             $msg .= "Route::model('".$context['collection']."', '".$context['namespace']."Models\\".$context['model']."');" . "<br>";
             $msg .= "Route::resource('".$context['collection']."', '".$context['controller']."Controller'); " . "<br><br>";
-            $msg .= "Do not forget to run `php artisan migrate` " . "<br>";
+            $msg .= "Do not forget to run <b>php artisan migrate</b> " . "<br>";
         }
-
-
-
-
-        // create Crud
-        $p = Proto::create( $this->templatesPath . $template , base_path().'/'.$output , $context);
 
         if($p->generate(true)){
             $response = "<h2>You successfully create CRUD for <b>".$context['model']."</b></h2><br>". $msg;

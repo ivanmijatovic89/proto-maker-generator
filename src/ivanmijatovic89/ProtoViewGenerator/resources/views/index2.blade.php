@@ -1,4 +1,4 @@
-@extends('protomaker2::master')
+@extends('protomaker::master2')
 
 @section('content')
     <h1>Proto Maker</h1>

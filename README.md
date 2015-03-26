@@ -1,5 +1,5 @@
 
-  composer.json
+  add to composer.json
 
       "repositories": [
         {

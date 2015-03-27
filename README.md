@@ -5,7 +5,8 @@
 
   	"require-dev": {
 
-          "ivanmijatovic89/proto-view-generator":  "dev-master",
+          "dam1r89/proto-generator": "dev-master",
+          "ivanmijatovic89/proto-view-generator": "dev-master"
 
   	},
 

@@ -22,6 +22,5 @@
         "psr-0": {
             "ivanmijatovic89\\ProtoViewGenerator": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

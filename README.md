@@ -1,17 +1,12 @@
 
   add to composer.json
 
-      "repositories": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/ivanmijatovic89/proto-maker-generator"
-        }
-      ],
+
 
   	"require-dev": {
 
           "ivanmijatovic89/proto-view-generator":  "dev-master",
-          "dam1r89/proto-generator": "dev-master"
+
   	},
 
 

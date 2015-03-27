@@ -15,7 +15,7 @@
 
 
     },
-    "require-dev":{
+    "require-dev": {
       "dam1r89/proto-generator": "dev-master"
     },
 

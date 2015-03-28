@@ -10,7 +10,7 @@
 		@yield('header')
 	</head>
 	<body>
-        @include('protomaker::navigation')
+        @include('protomaker::nav')
         <div class="container" style="margin-top:50px">
         	<div class="row">
         		<div class="col-md-12">

@@ -397,27 +397,27 @@
                     makeJson();
                     {{--{{URL::route('protoMakeCrud')}}--}}
                     $.post( "protoMakeCrud" ,{
-                                "_token"    : "{{{ csrf_token() }}}" ,
-                                "fields"    : $.obj,
-                                "model"     : $.module_name,
-                                "namespace" : $('#namespace').val() ,
-                                "output"    : $('#output').val() ,
-                                "template"  : $('#template').val()
-                            },
-                            function( data ) {
-                                if(data.status == 200){
-                                    $( ".alert-danger").hide();
-                                    $( ".alert-success").fadeIn('slow').html( data.msg );
+                            "_token"    : "{{{ csrf_token() }}}" ,
+                            "fields"    : $.obj,
+                            "model"     : $.module_name,
+                            "namespace" : $('#namespace').val() ,
+                            "output"    : $('#output').val() ,
+                            "template"  : $('#template').val()
+                    },
+                        function( data ) {
+                            if(data.status == 200){
+                                $( ".alert-danger").hide();
+                                $( ".alert-success").fadeIn('slow').html( data.msg );
 
 
-                                }else if(data.status == 400){
-                                    $( ".alert-success").hide();
-                                    $( ".alert-danger").fadeIn('slow').html( data.msg );
+                            }else if(data.status == 400){
+                                $( ".alert-success").hide();
+                                $( ".alert-danger").fadeIn('slow').html( data.msg );
 
-
-                                }
 
                             }
+
+                        }
                     );
 
                     $('.progress-bar').text('100%');

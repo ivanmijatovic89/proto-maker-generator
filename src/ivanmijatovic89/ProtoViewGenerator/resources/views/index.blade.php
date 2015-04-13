@@ -171,6 +171,7 @@
                                 <option value="standard"> Standard</option>
                                 <option value="modul">    Module</option>
                                 <option value="translate">Translate</option>
+                                <option value="translate_metronic">Translate Metronic</option>
                             </select>
                         </div>
                     </div>
@@ -250,7 +251,7 @@
 
                 function makeTranslation()
                 {
-                    if($('#template').val() == 'translate'){
+                    if($('#template').val() == 'translate' ||  $('#template').val() == 'translate_metronic'){
                         $(".span_translation").show();
                     }else{
                         $(".span_translation").hide();
@@ -354,11 +355,14 @@
                     $.module_name = $('#modul_name').val();
 
 
-                    // Template --template
+                    
+                     // Template --template
                     if($('#template').val() == 'modul') {
                         $.template = ' --template="modul" ';
                     }else if($('#template').val() == 'translate'){
                         $.template = ' --template="translate" ';
+                    }else if($('#template').val() == 'translate_metronic'){
+                        $.template = ' --template="translate_metronic" ';
                     }else{
                         $.template = ' ';
                     }

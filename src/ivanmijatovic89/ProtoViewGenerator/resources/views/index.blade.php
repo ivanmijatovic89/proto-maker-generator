@@ -169,6 +169,7 @@
                       </span>
                             <select class="form-control" id="template" onchange="makeTranslation()" >
                                 <option value="standard"> Standard</option>
+                                <option value="standard_metronic"> Standard Metronic</option>
                                 <option value="modul">    Module</option>
                                 <option value="translate">Translate</option>
                                 <option value="translate_metronic">Translate Metronic</option>
